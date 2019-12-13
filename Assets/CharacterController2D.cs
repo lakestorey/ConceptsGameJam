@@ -98,6 +98,20 @@ public class CharacterController2D : MonoBehaviour
 		}
 	}
 
+    public void Jump(float Force) {
+        if (m_Grounded == false) {
+            m_Rigidbody2D.AddForce(new Vector2(0f, Force));
+        }
+    }
+
+    public bool onGround()
+    {
+        if (m_Grounded) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 
 	private void Flip()
 	{
@@ -110,3 +124,5 @@ public class CharacterController2D : MonoBehaviour
 		transform.localScale = theScale;
 	}
 }
+
+
